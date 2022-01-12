@@ -1,0 +1,10 @@
+Exemple : docker build -t imovieapp --build-arg repodir=./repos --build-arg artifact=movieapi.jar .
+  	  docker run -d -p 8080:8080 --name movieapi imovieapp
+
+
+
+
+sudo docker build -t testeapi --build-arg repodir=. --build-arg artifact=movieapimariadb.jar .
+sudo docker run -d -p 8080:8080 --name movieapimariadb testeapi
+
+sudo docker exec -it movieapimariadb mysql -u root -p
