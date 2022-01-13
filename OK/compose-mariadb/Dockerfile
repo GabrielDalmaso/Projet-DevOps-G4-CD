@@ -8,5 +8,5 @@ RUN echo  "Deploy artifact: ${repodir}/${artifact}"
 COPY ${repodir}/${artifact} .
 RUN echo "Conf: .conf/application.properties"
 COPY ./conf/application.properties application.properties
-EXPOSE 8080
+EXPOSE 80
 CMD java -jar $ARTIFACT
