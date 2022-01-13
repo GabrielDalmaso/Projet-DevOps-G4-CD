@@ -1,0 +1,23 @@
+version: '3.1'
+
+services :
+  db:
+    image: mariadb:latest
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: password
+      MARIADB_DATABASE: dbmovie
+      MARIADB_USER: g4user
+      MARIADB_PASSWORD: password
+      
+  api:
+    build:
+      context: .
+      args:
+        repodir: ${repodir}
+        artifact: ${artifact}
+        confname: ${confname}
+    ports:
+      - 8080:8080
